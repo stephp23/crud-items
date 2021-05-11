@@ -76,11 +76,11 @@ const ItemEdit = (props) => {
 		setItem(editedItem);
 	};
 
-	const handleSubmit = async (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(props.match.params?.id);
 		console.log(item);
-		await axios({
+		axios({
 			url: `http://localhost:5000/api/items/${props.match.params.id}`,
 			method: "POST",
 			data: item,
